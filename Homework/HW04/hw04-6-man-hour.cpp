@@ -27,11 +27,9 @@
         Salary = U$ 374,000.00
 */
 #include<stdio.h>
-#include <locale.h>
 
 int main()
 {
-    setlocale( LC_NUMERIC, "" ) ;
     char Employees_ID[10] ;
     float working_hr, salary ;
      
@@ -46,10 +44,8 @@ int main()
 
     float allsalary = working_hr * salary ;
 
-    
-
     printf( "Expected Output:\n");
     printf( "Employees ID = %s\n", Employees_ID ) ;
-    printf( "Salary = U$ %.2f\n", working_hr * salary ) ;
+    printf( "Salary = U$ %'1.2f\n", allsalary ) ;
     return 0;
 }
