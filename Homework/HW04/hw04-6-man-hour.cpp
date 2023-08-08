@@ -27,14 +27,16 @@
         Salary = U$ 374,000.00
 */
 #include<stdio.h>
+#include <locale.h>
 
 int main()
 {
+    setlocale( LC_NUMERIC, "" ) ;
     char Employees_ID[10] ;
     float working_hr, salary ;
      
     printf( "Input the Employees ID(Max. 10 chars): \n" ) ;
-    scanf( "%s",&Employees_ID ) ;
+    scanf( "%s", &Employees_ID ) ;
 
     printf( "Input the working hrs: \n" ) ;
     scanf( "%f", &working_hr ) ;
@@ -42,8 +44,12 @@ int main()
     printf( "Salary amount/hr: \n" ) ;
     scanf( "%f", &salary ) ;
 
+    float allsalary = working_hr * salary ;
+
+    
+
     printf( "Expected Output:\n");
     printf( "Employees ID = %s\n", Employees_ID ) ;
-    printf( "Salary = U$ %0.2f\n", working_hr * salary ) ;
+    printf( "Salary = U$ %.2f\n", working_hr * salary ) ;
     return 0;
 }
